@@ -7,7 +7,7 @@ import { defineConfig, loadEnv } from 'vite'
 export default defineConfig(({ command, mode }) => {
   // No VITE_ prefix: the key stays in the dev server and never reaches the bundle.
   const apiKey = loadEnv(mode, import.meta.dirname, '').CURRENCYBEACON_API_KEY
-  if (command === 'serve' && !apiKey) {
+  if (command === 'serve' && mode !== 'test' && !apiKey) { // Vitest runs in 'test' mode and needs no key
     throw new Error('CURRENCYBEACON_API_KEY is missing. Run `cp .env.example .env.local` and set it.')
   }
 

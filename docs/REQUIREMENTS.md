@@ -33,6 +33,6 @@
 - Number formatting with thousands separators
 - Amount limits: 15 digits max
 - Rate line: `1 USD = 3.88 PLN`
-- Unit tests 
+- Unit tests (pure logic covered; hooks and end-to-end next)
 - Deploy and add the live URL to the README
 - Ideas: recently used currencies at the top of the list, a "Popular" group
